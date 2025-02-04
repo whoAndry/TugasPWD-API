@@ -7,9 +7,7 @@ use Illuminate\Validation\ValidationException;
 
 class ProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */ 
+            
     public function index(Request $request)
     {
         $query = $request->query('name');
@@ -33,9 +31,6 @@ class ProductController extends Controller
         ], 200);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         try {
@@ -59,9 +54,7 @@ class ProductController extends Controller
         ], 201); 
     }
 
-    /**
-     * Display the specified resource.
-     */
+   
     public function show(string $id)
     {
         $product = Product::find($id);      
@@ -74,9 +67,6 @@ class ProductController extends Controller
         ], 200); 
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
         $product = Product::find($id);      
@@ -105,9 +95,7 @@ class ProductController extends Controller
         ], 200); 
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    
     public function destroy(string $id)
     {
         $product = Product::find($id); 
